@@ -22,6 +22,7 @@ Partial Class Login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -31,6 +32,9 @@ Partial Class Login
         Me.username_cbbox = New System.Windows.Forms.ComboBox()
         Me.login_btn = New System.Windows.Forms.Button()
         Me.quit_btn = New System.Windows.Forms.Button()
+        Me.currentTime_lbl = New System.Windows.Forms.Label()
+        Me.currentDate_lbl = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'Label1
@@ -123,11 +127,35 @@ Partial Class Login
         Me.quit_btn.Text = "Quit"
         Me.quit_btn.UseVisualStyleBackColor = True
         '
+        'currentTime_lbl
+        '
+        Me.currentTime_lbl.AutoSize = True
+        Me.currentTime_lbl.Location = New System.Drawing.Point(613, 19)
+        Me.currentTime_lbl.Name = "currentTime_lbl"
+        Me.currentTime_lbl.Size = New System.Drawing.Size(30, 13)
+        Me.currentTime_lbl.TabIndex = 28
+        Me.currentTime_lbl.Text = "Time"
+        '
+        'currentDate_lbl
+        '
+        Me.currentDate_lbl.AutoSize = True
+        Me.currentDate_lbl.Location = New System.Drawing.Point(562, 19)
+        Me.currentDate_lbl.Name = "currentDate_lbl"
+        Me.currentDate_lbl.Size = New System.Drawing.Size(30, 13)
+        Me.currentDate_lbl.TabIndex = 27
+        Me.currentDate_lbl.Text = "Date"
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(681, 385)
+        Me.Controls.Add(Me.currentTime_lbl)
+        Me.Controls.Add(Me.currentDate_lbl)
         Me.Controls.Add(Me.quit_btn)
         Me.Controls.Add(Me.login_btn)
         Me.Controls.Add(Me.username_cbbox)
@@ -153,5 +181,8 @@ Partial Class Login
     Friend WithEvents username_cbbox As System.Windows.Forms.ComboBox
     Friend WithEvents login_btn As System.Windows.Forms.Button
     Friend WithEvents quit_btn As System.Windows.Forms.Button
+    Friend WithEvents currentTime_lbl As System.Windows.Forms.Label
+    Friend WithEvents currentDate_lbl As System.Windows.Forms.Label
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
 
 End Class

@@ -22,6 +22,7 @@ Partial Class Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -42,11 +43,28 @@ Partial Class Main
         Me.next_btn = New System.Windows.Forms.Button()
         Me.previous_btn = New System.Windows.Forms.Button()
         Me.first_btn = New System.Windows.Forms.Button()
-        Me.update_btn = New System.Windows.Forms.Button()
+        Me.edit_btn = New System.Windows.Forms.Button()
         Me.remove_btn = New System.Windows.Forms.Button()
         Me.add_btn = New System.Windows.Forms.Button()
         Me.search_btn = New System.Windows.Forms.Button()
+        Me.search_txt = New System.Windows.Forms.TextBox()
+        Me.currentDate_lbl = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.currentTime_lbl = New System.Windows.Forms.Label()
+        Me.record_lbl = New System.Windows.Forms.Label()
+        Me.cancel_btn = New System.Windows.Forms.Button()
+        Me.update_pgb = New System.Windows.Forms.ProgressBar()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.ECM_lbl = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.role_lbl = New System.Windows.Forms.Label()
+        Me.Role = New System.Windows.Forms.Label()
+        Me.inChargeBy_lbl = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.logOut_btn = New System.Windows.Forms.Button()
+        Me.ID_lbl = New System.Windows.Forms.Label()
+        Me.nameID = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -128,15 +146,17 @@ Partial Class Main
         '
         'memberID_txt
         '
+        Me.memberID_txt.Enabled = False
         Me.memberID_txt.Font = New System.Drawing.Font("Arial Narrow", 7.912088!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.memberID_txt.Location = New System.Drawing.Point(168, 137)
+        Me.memberID_txt.Location = New System.Drawing.Point(206, 137)
         Me.memberID_txt.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.memberID_txt.Name = "memberID_txt"
-        Me.memberID_txt.Size = New System.Drawing.Size(270, 20)
+        Me.memberID_txt.Size = New System.Drawing.Size(232, 20)
         Me.memberID_txt.TabIndex = 11
         '
         'firstName_txt
         '
+        Me.firstName_txt.Enabled = False
         Me.firstName_txt.Font = New System.Drawing.Font("Arial Narrow", 7.912088!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.firstName_txt.Location = New System.Drawing.Point(169, 180)
         Me.firstName_txt.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
@@ -146,6 +166,7 @@ Partial Class Main
         '
         'lastName_txt
         '
+        Me.lastName_txt.Enabled = False
         Me.lastName_txt.Font = New System.Drawing.Font("Arial Narrow", 7.912088!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lastName_txt.Location = New System.Drawing.Point(170, 225)
         Me.lastName_txt.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
@@ -155,15 +176,17 @@ Partial Class Main
         '
         'contactNum_txt
         '
+        Me.contactNum_txt.Enabled = False
         Me.contactNum_txt.Font = New System.Drawing.Font("Arial Narrow", 7.912088!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.contactNum_txt.Location = New System.Drawing.Point(579, 137)
+        Me.contactNum_txt.Location = New System.Drawing.Point(633, 137)
         Me.contactNum_txt.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.contactNum_txt.Name = "contactNum_txt"
-        Me.contactNum_txt.Size = New System.Drawing.Size(270, 20)
+        Me.contactNum_txt.Size = New System.Drawing.Size(216, 20)
         Me.contactNum_txt.TabIndex = 11
         '
         'emailAdd_txt
         '
+        Me.emailAdd_txt.Enabled = False
         Me.emailAdd_txt.Font = New System.Drawing.Font("Arial Narrow", 7.912088!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.emailAdd_txt.Location = New System.Drawing.Point(580, 180)
         Me.emailAdd_txt.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
@@ -173,9 +196,11 @@ Partial Class Main
         '
         'status_cbbox
         '
+        Me.status_cbbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.status_cbbox.Enabled = False
         Me.status_cbbox.Font = New System.Drawing.Font("Arial Narrow", 7.912088!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.status_cbbox.FormattingEnabled = True
-        Me.status_cbbox.Items.AddRange(New Object() {"Acticed", "Closed"})
+        Me.status_cbbox.Items.AddRange(New Object() {"Actived", "Closed"})
         Me.status_cbbox.Location = New System.Drawing.Point(579, 225)
         Me.status_cbbox.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.status_cbbox.Name = "status_cbbox"
@@ -184,6 +209,7 @@ Partial Class Main
         '
         'save_btn
         '
+        Me.save_btn.Enabled = False
         Me.save_btn.Font = New System.Drawing.Font("Arial Narrow", 7.912088!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.save_btn.Location = New System.Drawing.Point(97, 347)
         Me.save_btn.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
@@ -206,6 +232,8 @@ Partial Class Main
         '
         'membershipIDTypes_cbbox
         '
+        Me.membershipIDTypes_cbbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.membershipIDTypes_cbbox.Enabled = False
         Me.membershipIDTypes_cbbox.Font = New System.Drawing.Font("Arial Narrow", 7.912088!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.membershipIDTypes_cbbox.FormattingEnabled = True
         Me.membershipIDTypes_cbbox.Items.AddRange(New Object() {"DLX", "NDLX", "WD"})
@@ -259,16 +287,16 @@ Partial Class Main
         Me.first_btn.Text = "<<"
         Me.first_btn.UseVisualStyleBackColor = True
         '
-        'update_btn
+        'edit_btn
         '
-        Me.update_btn.Font = New System.Drawing.Font("Arial Narrow", 7.912088!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.update_btn.Location = New System.Drawing.Point(604, 408)
-        Me.update_btn.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.update_btn.Name = "update_btn"
-        Me.update_btn.Size = New System.Drawing.Size(176, 42)
-        Me.update_btn.TabIndex = 16
-        Me.update_btn.Text = "&Update Member's Profile"
-        Me.update_btn.UseVisualStyleBackColor = True
+        Me.edit_btn.Font = New System.Drawing.Font("Arial Narrow", 7.912088!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.edit_btn.Location = New System.Drawing.Point(604, 408)
+        Me.edit_btn.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.edit_btn.Name = "edit_btn"
+        Me.edit_btn.Size = New System.Drawing.Size(176, 42)
+        Me.edit_btn.TabIndex = 16
+        Me.edit_btn.Text = "&Edit Member's Profile"
+        Me.edit_btn.UseVisualStyleBackColor = True
         '
         'remove_btn
         '
@@ -303,27 +331,198 @@ Partial Class Main
         Me.search_btn.Text = "&Search"
         Me.search_btn.UseVisualStyleBackColor = True
         '
+        'search_txt
+        '
+        Me.search_txt.Font = New System.Drawing.Font("Arial Narrow", 7.912088!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.search_txt.Location = New System.Drawing.Point(487, 58)
+        Me.search_txt.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.search_txt.Name = "search_txt"
+        Me.search_txt.Size = New System.Drawing.Size(270, 20)
+        Me.search_txt.TabIndex = 23
+        '
+        'currentDate_lbl
+        '
+        Me.currentDate_lbl.AutoSize = True
+        Me.currentDate_lbl.Location = New System.Drawing.Point(783, 17)
+        Me.currentDate_lbl.Name = "currentDate_lbl"
+        Me.currentDate_lbl.Size = New System.Drawing.Size(25, 15)
+        Me.currentDate_lbl.TabIndex = 25
+        Me.currentDate_lbl.Text = "Date"
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        '
+        'currentTime_lbl
+        '
+        Me.currentTime_lbl.AutoSize = True
+        Me.currentTime_lbl.Location = New System.Drawing.Point(834, 17)
+        Me.currentTime_lbl.Name = "currentTime_lbl"
+        Me.currentTime_lbl.Size = New System.Drawing.Size(28, 15)
+        Me.currentTime_lbl.TabIndex = 26
+        Me.currentTime_lbl.Text = "Time"
+        '
+        'record_lbl
+        '
+        Me.record_lbl.AutoSize = True
+        Me.record_lbl.Location = New System.Drawing.Point(410, 314)
+        Me.record_lbl.Name = "record_lbl"
+        Me.record_lbl.Size = New System.Drawing.Size(59, 15)
+        Me.record_lbl.TabIndex = 27
+        Me.record_lbl.Text = "Record label"
+        '
+        'cancel_btn
+        '
+        Me.cancel_btn.Enabled = False
+        Me.cancel_btn.Location = New System.Drawing.Point(617, 314)
+        Me.cancel_btn.Name = "cancel_btn"
+        Me.cancel_btn.Size = New System.Drawing.Size(75, 23)
+        Me.cancel_btn.TabIndex = 28
+        Me.cancel_btn.Text = "&Cancel"
+        Me.cancel_btn.UseVisualStyleBackColor = True
+        '
+        'update_pgb
+        '
+        Me.update_pgb.Location = New System.Drawing.Point(657, 84)
+        Me.update_pgb.Name = "update_pgb"
+        Me.update_pgb.Size = New System.Drawing.Size(100, 23)
+        Me.update_pgb.TabIndex = 29
+        '
+        'Timer2
+        '
+        '
+        'ECM_lbl
+        '
+        Me.ECM_lbl.AutoSize = True
+        Me.ECM_lbl.Font = New System.Drawing.Font("Agency FB", 13.84615!)
+        Me.ECM_lbl.Location = New System.Drawing.Point(166, 133)
+        Me.ECM_lbl.Name = "ECM_lbl"
+        Me.ECM_lbl.Size = New System.Drawing.Size(35, 24)
+        Me.ECM_lbl.TabIndex = 30
+        Me.ECM_lbl.Text = "GCM"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Agency FB", 13.84615!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(454, 268)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(84, 24)
+        Me.Label8.TabIndex = 31
+        Me.Label8.Text = "In charge by:"
+        '
+        'role_lbl
+        '
+        Me.role_lbl.AutoSize = True
+        Me.role_lbl.Font = New System.Drawing.Font("Agency FB", 13.84615!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.role_lbl.Location = New System.Drawing.Point(50, 47)
+        Me.role_lbl.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.role_lbl.Name = "role_lbl"
+        Me.role_lbl.Size = New System.Drawing.Size(38, 24)
+        Me.role_lbl.TabIndex = 33
+        Me.role_lbl.Text = "Role:"
+        '
+        'Role
+        '
+        Me.Role.AutoSize = True
+        Me.Role.Font = New System.Drawing.Font("Agency FB", 13.84615!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Role.Location = New System.Drawing.Point(93, 47)
+        Me.Role.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Role.Name = "Role"
+        Me.Role.Size = New System.Drawing.Size(33, 24)
+        Me.Role.TabIndex = 34
+        Me.Role.Text = "role"
+        '
+        'inChargeBy_lbl
+        '
+        Me.inChargeBy_lbl.AutoSize = True
+        Me.inChargeBy_lbl.Font = New System.Drawing.Font("Agency FB", 13.84615!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.inChargeBy_lbl.Location = New System.Drawing.Point(575, 268)
+        Me.inChargeBy_lbl.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.inChargeBy_lbl.Name = "inChargeBy_lbl"
+        Me.inChargeBy_lbl.Size = New System.Drawing.Size(33, 24)
+        Me.inChargeBy_lbl.TabIndex = 35
+        Me.inChargeBy_lbl.Text = "role"
+        '
         'TextBox1
         '
+        Me.TextBox1.Enabled = False
         Me.TextBox1.Font = New System.Drawing.Font("Arial Narrow", 7.912088!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(487, 58)
+        Me.TextBox1.Location = New System.Drawing.Point(580, 137)
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(270, 20)
-        Me.TextBox1.TabIndex = 23
+        Me.TextBox1.Size = New System.Drawing.Size(28, 20)
+        Me.TextBox1.TabIndex = 36
+        Me.TextBox1.Text = "+60"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(616, 138)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(10, 15)
+        Me.Label9.TabIndex = 37
+        Me.Label9.Text = "-"
+        '
+        'logOut_btn
+        '
+        Me.logOut_btn.Location = New System.Drawing.Point(54, 84)
+        Me.logOut_btn.Name = "logOut_btn"
+        Me.logOut_btn.Size = New System.Drawing.Size(75, 23)
+        Me.logOut_btn.TabIndex = 38
+        Me.logOut_btn.Text = "&Log out"
+        Me.logOut_btn.UseVisualStyleBackColor = True
+        '
+        'ID_lbl
+        '
+        Me.ID_lbl.AutoSize = True
+        Me.ID_lbl.Font = New System.Drawing.Font("Agency FB", 13.84615!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ID_lbl.Location = New System.Drawing.Point(50, 17)
+        Me.ID_lbl.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.ID_lbl.Name = "ID_lbl"
+        Me.ID_lbl.Size = New System.Drawing.Size(24, 24)
+        Me.ID_lbl.TabIndex = 39
+        Me.ID_lbl.Text = "ID:"
+        '
+        'nameID
+        '
+        Me.nameID.AutoSize = True
+        Me.nameID.Font = New System.Drawing.Font("Agency FB", 13.84615!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nameID.Location = New System.Drawing.Point(93, 17)
+        Me.nameID.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.nameID.Name = "nameID"
+        Me.nameID.Size = New System.Drawing.Size(42, 24)
+        Me.nameID.TabIndex = 40
+        Me.nameID.Text = "name"
         '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(5.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(913, 479)
-        Me.Controls.Add(Me.search_btn)
+        Me.Controls.Add(Me.nameID)
+        Me.Controls.Add(Me.ID_lbl)
+        Me.Controls.Add(Me.logOut_btn)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.inChargeBy_lbl)
+        Me.Controls.Add(Me.Role)
+        Me.Controls.Add(Me.role_lbl)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.ECM_lbl)
+        Me.Controls.Add(Me.update_pgb)
+        Me.Controls.Add(Me.cancel_btn)
+        Me.Controls.Add(Me.record_lbl)
+        Me.Controls.Add(Me.currentTime_lbl)
+        Me.Controls.Add(Me.currentDate_lbl)
+        Me.Controls.Add(Me.search_btn)
+        Me.Controls.Add(Me.search_txt)
         Me.Controls.Add(Me.last_btn)
         Me.Controls.Add(Me.next_btn)
         Me.Controls.Add(Me.previous_btn)
         Me.Controls.Add(Me.first_btn)
-        Me.Controls.Add(Me.update_btn)
+        Me.Controls.Add(Me.edit_btn)
         Me.Controls.Add(Me.remove_btn)
         Me.Controls.Add(Me.add_btn)
         Me.Controls.Add(Me.membershipIDTypes_cbbox)
@@ -370,9 +569,26 @@ Partial Class Main
     Friend WithEvents next_btn As System.Windows.Forms.Button
     Friend WithEvents previous_btn As System.Windows.Forms.Button
     Friend WithEvents first_btn As System.Windows.Forms.Button
-    Friend WithEvents update_btn As System.Windows.Forms.Button
+    Friend WithEvents edit_btn As System.Windows.Forms.Button
     Friend WithEvents remove_btn As System.Windows.Forms.Button
     Friend WithEvents add_btn As System.Windows.Forms.Button
     Friend WithEvents search_btn As System.Windows.Forms.Button
+    Friend WithEvents search_txt As System.Windows.Forms.TextBox
+    Friend WithEvents currentDate_lbl As System.Windows.Forms.Label
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents currentTime_lbl As System.Windows.Forms.Label
+    Friend WithEvents record_lbl As System.Windows.Forms.Label
+    Friend WithEvents cancel_btn As System.Windows.Forms.Button
+    Friend WithEvents update_pgb As System.Windows.Forms.ProgressBar
+    Friend WithEvents Timer2 As System.Windows.Forms.Timer
+    Friend WithEvents ECM_lbl As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents role_lbl As System.Windows.Forms.Label
+    Friend WithEvents Role As System.Windows.Forms.Label
+    Friend WithEvents inChargeBy_lbl As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents logOut_btn As System.Windows.Forms.Button
+    Friend WithEvents ID_lbl As System.Windows.Forms.Label
+    Friend WithEvents nameID As System.Windows.Forms.Label
 End Class

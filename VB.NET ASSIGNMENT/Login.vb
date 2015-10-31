@@ -3,9 +3,18 @@ Public Class Login
     Dim ConString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\ChoongFoo\Documents\APU\Semester 4\VBN Assignment\Membership.accdb"
     Dim con As New OleDbConnection(ConString)
     Dim da As OleDbDataAdapter
-    Dim ds1, ds2 As New DataSet
+    Dim ds1, ds2, ds3 As New DataSet
     Dim totalRec As Integer
+    Private Const CP_NOCLOSE_BUTTON As Integer = &H200
+    Protected Overloads Overrides ReadOnly Property CreateParams() As CreateParams
+        Get
+            Dim myCp As CreateParams = MyBase.CreateParams
+            myCp.ClassStyle = myCp.ClassStyle Or CP_NOCLOSE_BUTTON
+            Return myCp
+        End Get
+    End Property
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        MaximizeBox = False
         con.Open()
         Dim Sql As String = "select * from Credentials"
         Dim da As New OleDbDataAdapter(Sql, con)
@@ -20,17 +29,40 @@ Public Class Login
     Private Sub login_btn_Click(sender As Object, e As EventArgs) Handles login_btn.Click
         Dim Sql As String = "select * from Credentials where Username='" & username_cbbox.Text & "'"
         Dim da As New OleDbDataAdapter(Sql, con)
+
+        Dim staffrole As String
+        Dim loginstaff As String
+
         da.Fill(ds2, "UserPassword")
+        da.Fill(ds3, "StaffName")
         If password_txt.Text = ds2.Tables("UserPassword").Rows(0).Item(1).ToString Then
-            MsgBox("Valid User")
+            MsgBox("Welcome " & username_cbbox.Text & "!!")
+
+            loginstaff = ds3.Tables("StaffName").Rows(0).Item(0).ToString
+            staffrole = ds3.Tables("StaffName").Rows(0).Item(2).ToString
+
+
+            Main.nameID.Text = loginstaff
+            Main.Role.Text = staffrole
+
+            Me.Hide()
             Main.Show()
+            username_cbbox.Text = ""
+            password_txt.Text = ""
+
         Else
             MsgBox("Invalid User")
+            username_cbbox.Text = -1
+            password_txt.Text = ""
         End If
     End Sub
 
     Private Sub quit_btn_Click(sender As Object, e As EventArgs) Handles quit_btn.Click
-        Me.Close()
+        Dim y As String
+        y = MsgBox("Quit comfirmation.", MsgBoxStyle.YesNo)
+        If y = vbYes Then
+            Me.Close()
+        End If
     End Sub
 
     Private Sub password_txt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles password_txt.KeyPress
@@ -41,5 +73,10 @@ Public Class Login
 
     Private Sub password_txt_TextChanged(sender As Object, e As EventArgs) Handles password_txt.TextChanged
 
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        currentDate_lbl.Text = Date.Now.ToString("dd-MM-yyyy")
+        currentTime_lbl.Text = TimeOfDay
     End Sub
 End Class
