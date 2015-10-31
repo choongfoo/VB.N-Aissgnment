@@ -52,7 +52,6 @@ Public Class Login
 
         Else
             MsgBox("Invalid User")
-            username_cbbox.Text = -1
             password_txt.Text = ""
         End If
     End Sub
