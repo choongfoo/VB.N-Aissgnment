@@ -1,9 +1,9 @@
 ﻿Imports System.Data.OleDb
 Public Class Main
-    Dim ConString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\ChoongFoo\Documents\APU\Semester 4\VBN Assignment\Membership.accdb"
+    Dim ConString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\Membership.accdb"
     Dim con As New OleDbConnection(ConString)
     Dim da As New OleDbDataAdapter
-    Dim ds As New DataSet
+    Dim ds, ds1 As New DataSet
     Dim cmd As New OleDb.OleDbCommand
     Dim Sql As String
     Dim totalRec, CurRec As Integer
@@ -35,6 +35,7 @@ Public Class Main
         contactNum_txt.Text = ds.Tables("MembersData").Rows(CurRec).Item(4)
         emailAdd_txt.Text = ds.Tables("MembersData").Rows(CurRec).Item(5)
         status_cbbox.Text = ds.Tables("MembersData").Rows(CurRec).Item(6)
+        inChargeBy_lbl.Text = ds.Tables("MembersData").Rows(CurRec).Item(7)
         record_lbl.Text = CurRec + 1 & " / " & totalRec
     End Sub
 
@@ -71,22 +72,21 @@ Public Class Main
     End Sub
 
     Private Sub remove_btn_Click(sender As Object, e As EventArgs) Handles remove_btn.Click
-        If Role.Text = "Administrator" Then
-            Sql = "Delete * from Members where "
-            Sql = Sql & "MemberID= '" & memberID_txt.Text & "'"
-            cmd = New OleDbCommand(Sql, con)
-            Dim y As String
-            y = MsgBox("Confirm deletion", MsgBoxStyle.YesNo)
-            If y = vbYes Then
-                cmd.ExecuteNonQuery()
-                MsgBox("Deleted")
-                cancel_btn.PerformClick()
-            Else
-                MsgBox("Not deleted")
-            End If
-
+        If Role.Text <> "Administrator" Then
+            MsgBox("This operation is only allow for Administrator", MsgBoxStyle.Critical)
+            Exit Sub
+        End If
+        Sql = "Delete * from Members where "
+        Sql = Sql & "MemberID= '" & memberID_txt.Text & "'"
+        cmd = New OleDbCommand(Sql, con)
+        Dim y As String
+        y = MsgBox("Confirm deletion", MsgBoxStyle.YesNo)
+        If y = vbYes Then
+            cmd.ExecuteNonQuery()
+            MsgBox("Deleted")
+            cancel_btn.PerformClick()
         Else
-            MsgBox("This operation is only allow for Administrator",MsgBoxStyle.Critical)
+            MsgBox("Not deleted")
         End If
 
     End Sub
@@ -104,7 +104,7 @@ Public Class Main
         memberID_txt.Clear()
         firstName_txt.Clear()
         lastName_txt.Clear()
-        membershipIDTypes_cbbox.Text = -1
+        membershipIDTypes_cbbox.ResetText()
         contactNum_txt.Clear()
         emailAdd_txt.Clear()
         status_cbbox.ResetText()
@@ -129,6 +129,7 @@ Public Class Main
         emailAdd_txt.Enabled = True
         status_cbbox.Enabled = True
 
+        logOut_btn.Enabled = False
         add_btn.Enabled = False
         remove_btn.Enabled = False
         edit_btn.Enabled = False
@@ -151,17 +152,17 @@ Public Class Main
             Sql = Sql & membershipIDTypes_cbbox.Text & "','"
             Sql = Sql & contactNum_txt.Text & "','"
             Sql = Sql & emailAdd_txt.Text & "','"
-            Sql = Sql & status_cbbox.Text & "')"
+            Sql = Sql & status_cbbox.Text & "','"
+            Sql = Sql & inChargeBy_lbl.Text & "')"
 
             If firstName_txt.Text = "" Or lastName_txt.Text = "" Or membershipIDTypes_cbbox.Text = "" Or contactNum_txt.Text = "" Or emailAdd_txt.Text = "" Or status_cbbox.Text = "" Then
                 MsgBox("Please fill in all the column.")
                 Exit Sub
-
-                cmd = New OleDbCommand(Sql, con)
-                cmd.ExecuteNonQuery()
-                MsgBox("New member detail is added!")
-                cancel_btn.PerformClick()
             End If
+            cmd = New OleDbCommand(Sql, con)
+            cmd.ExecuteNonQuery()
+            MsgBox("New member detail is added!")
+            cancel_btn.PerformClick()
 
         Else
             Sql = "UPDATE Members SET"
@@ -198,6 +199,11 @@ Public Class Main
 
     Private Sub edit_btn_Click(sender As Object, e As EventArgs) Handles edit_btn.Click
 
+        If Role.Text <> "Administrator" Then
+            MsgBox("This operation is only allow for Administrator", MsgBoxStyle.Critical)
+            Exit Sub
+        End If
+
         save_btn.Text = "Update"
 
         firstName_txt.Enabled = True
@@ -227,7 +233,7 @@ Public Class Main
 
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles timer_DateAndTime.Tick
         currentDate_lbl.Text = Date.Now.ToString("dd-MM-yyyy")
         currentTime_lbl.Text = TimeOfDay
     End Sub
@@ -252,6 +258,7 @@ Public Class Main
         emailAdd_txt.Enabled = False
         status_cbbox.Enabled = False
 
+        logOut_btn.Enabled = True
         cancel_btn.Enabled = False
         save_btn.Enabled = False
         add_btn.Enabled = True
@@ -268,8 +275,12 @@ Public Class Main
 
     Private Sub search_btn_Click(sender As Object, e As EventArgs) Handles search_btn.Click
         Dim i As Integer
+
+        Sql = "Select * from Members"
+        da = New OleDbDataAdapter(Sql, con)
+        da.Fill(ds1, "SearchMember")
         For i = 0 To totalRec - 1
-            If search_txt.Text = ds.Tables("MemberData").Rows(i).Item(0).ToString Then
+            If search_txt.Text = ds1.Tables("SearchMember").Rows(i).Item(0).ToString Then
                 memberID_txt.Text = search_txt.Text
                 Exit For
             End If
@@ -278,26 +289,27 @@ Public Class Main
         If search_txt.Text <> memberID_txt.Text Then
             MsgBox("Unable to find data")
         Else
-            ds.Clear()
+            ds1.Clear()
 
-            Sql = "select * from MemberID = '" & memberID_txt.Text & "'"
+            Sql = "select * from Members where MemberID = '" & memberID_txt.Text & "'"
             da = New OleDbDataAdapter(Sql, con)
-            da.Fill(ds, "MembersData")
+            da.Fill(ds1, "SearchMember")
 
-            memberID_txt.Text = ds.Tables("MembersData").Rows(0).Item(0)
-            firstName_txt.Text = ds.Tables("MembersData").Rows(CurRec).Item(1)
-            lastName_txt.Text = ds.Tables("MembersData").Rows(CurRec).Item(2)
-            membershipIDTypes_cbbox.Text = ds.Tables("MembersData").Rows(CurRec).Item(3)
-            contactNum_txt.Text = ds.Tables("MembersData").Rows(CurRec).Item(4)
-            emailAdd_txt.Text = ds.Tables("MembersData").Rows(CurRec).Item(5)
-            status_cbbox.Text = ds.Tables("MembersData").Rows(CurRec).Item(6)
-            record_lbl.Text = CurRec + 1 & " / " & totalRec
+            memberID_txt.Text = ds1.Tables("SearchMember").Rows(0).Item(0)
+            firstName_txt.Text = ds1.Tables("SearchMember").Rows(0).Item(1)
+            lastName_txt.Text = ds1.Tables("SearchMember").Rows(0).Item(2)
+            membershipIDTypes_cbbox.Text = ds1.Tables("SearchMember").Rows(0).Item(3)
+            contactNum_txt.Text = ds1.Tables("SearchMember").Rows(0).Item(4)
+            emailAdd_txt.Text = ds1.Tables("SearchMember").Rows(0).Item(5)
+            status_cbbox.Text = ds1.Tables("SearchMember").Rows(0).Item(6)
+            inChargeBy_lbl.Text = ds1.Tables("SearchMember").Rows(0).Item(7)
+            record_lbl.Text = "1" & " / " & "1"
 
         End If
 
     End Sub
 
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles timer_SaveOrUpdate.Tick
 
     End Sub
 

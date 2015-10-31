@@ -49,12 +49,12 @@ Partial Class Main
         Me.search_btn = New System.Windows.Forms.Button()
         Me.search_txt = New System.Windows.Forms.TextBox()
         Me.currentDate_lbl = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.timer_DateAndTime = New System.Windows.Forms.Timer(Me.components)
         Me.currentTime_lbl = New System.Windows.Forms.Label()
         Me.record_lbl = New System.Windows.Forms.Label()
         Me.cancel_btn = New System.Windows.Forms.Button()
         Me.update_pgb = New System.Windows.Forms.ProgressBar()
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.timer_SaveOrUpdate = New System.Windows.Forms.Timer(Me.components)
         Me.ECM_lbl = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.role_lbl = New System.Windows.Forms.Label()
@@ -349,9 +349,9 @@ Partial Class Main
         Me.currentDate_lbl.TabIndex = 25
         Me.currentDate_lbl.Text = "Date"
         '
-        'Timer1
+        'timer_DateAndTime
         '
-        Me.Timer1.Enabled = True
+        Me.timer_DateAndTime.Enabled = True
         '
         'currentTime_lbl
         '
@@ -383,12 +383,13 @@ Partial Class Main
         '
         'update_pgb
         '
-        Me.update_pgb.Location = New System.Drawing.Point(657, 84)
+        Me.update_pgb.Location = New System.Drawing.Point(657, 95)
         Me.update_pgb.Name = "update_pgb"
         Me.update_pgb.Size = New System.Drawing.Size(100, 23)
         Me.update_pgb.TabIndex = 29
+        Me.update_pgb.Visible = False
         '
-        'Timer2
+        'timer_SaveOrUpdate
         '
         '
         'ECM_lbl
@@ -575,12 +576,12 @@ Partial Class Main
     Friend WithEvents search_btn As System.Windows.Forms.Button
     Friend WithEvents search_txt As System.Windows.Forms.TextBox
     Friend WithEvents currentDate_lbl As System.Windows.Forms.Label
-    Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents timer_DateAndTime As System.Windows.Forms.Timer
     Friend WithEvents currentTime_lbl As System.Windows.Forms.Label
     Friend WithEvents record_lbl As System.Windows.Forms.Label
     Friend WithEvents cancel_btn As System.Windows.Forms.Button
     Friend WithEvents update_pgb As System.Windows.Forms.ProgressBar
-    Friend WithEvents Timer2 As System.Windows.Forms.Timer
+    Friend WithEvents timer_SaveOrUpdate As System.Windows.Forms.Timer
     Friend WithEvents ECM_lbl As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents role_lbl As System.Windows.Forms.Label

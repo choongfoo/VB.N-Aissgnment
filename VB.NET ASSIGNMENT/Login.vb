@@ -1,6 +1,6 @@
 ﻿Imports System.Data.OleDb
 Public Class Login
-    Dim ConString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\ChoongFoo\Documents\APU\Semester 4\VBN Assignment\Membership.accdb"
+    Dim ConString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\Membership.accdb"
     Dim con As New OleDbConnection(ConString)
     Dim da As OleDbDataAdapter
     Dim ds1, ds2, ds3 As New DataSet
@@ -35,6 +35,12 @@ Public Class Login
 
         da.Fill(ds2, "UserPassword")
         da.Fill(ds3, "StaffName")
+
+        If password_txt.Text = "" Or username_cbbox.Text = "" Then
+            MsgBox("Please fill in all the column.")
+            Exit Sub
+        End If
+
         If password_txt.Text = ds2.Tables("UserPassword").Rows(0).Item(1).ToString Then
             MsgBox("Welcome " & username_cbbox.Text & "!!")
 
@@ -77,5 +83,9 @@ Public Class Login
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         currentDate_lbl.Text = Date.Now.ToString("dd-MM-yyyy")
         currentTime_lbl.Text = TimeOfDay
+    End Sub
+
+    Private Sub username_cbbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles username_cbbox.SelectedIndexChanged
+
     End Sub
 End Class

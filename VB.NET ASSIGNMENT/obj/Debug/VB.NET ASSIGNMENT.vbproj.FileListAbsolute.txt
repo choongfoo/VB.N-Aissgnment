@@ -1,21 +1,4 @@
-C:\Users\ChoongFoo\Documents\APU\Semester 4\VBN Assignment\VB.NET ASSIGNMENT\VB.NET ASSIGNMENT\bin\Debug\VB.NET ASSIGNMENT.exe.config
-C:\Users\ChoongFoo\Documents\APU\Semester 4\VBN Assignment\VB.NET ASSIGNMENT\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.exe
-C:\Users\ChoongFoo\Documents\APU\Semester 4\VBN Assignment\VB.NET ASSIGNMENT\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.xml
-C:\Users\ChoongFoo\Documents\APU\Semester 4\VBN Assignment\VB.NET ASSIGNMENT\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.pdb
-C:\Users\ChoongFoo\Documents\APU\Semester 4\VBN Assignment\VB.NET ASSIGNMENT\VB.NET ASSIGNMENT\bin\Debug\VB.NET ASSIGNMENT.exe
-C:\Users\ChoongFoo\Documents\APU\Semester 4\VBN Assignment\VB.NET ASSIGNMENT\VB.NET ASSIGNMENT\bin\Debug\VB.NET ASSIGNMENT.pdb
-C:\Users\ChoongFoo\Documents\APU\Semester 4\VBN Assignment\VB.NET ASSIGNMENT\VB.NET ASSIGNMENT\bin\Debug\VB.NET ASSIGNMENT.xml
-C:\Users\ChoongFoo\Documents\APU\Semester 4\VBN Assignment\VB.NET ASSIGNMENT\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.Form1.resources
-C:\Users\ChoongFoo\Documents\APU\Semester 4\VBN Assignment\VB.NET ASSIGNMENT\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.Login.resources
-C:\Users\ChoongFoo\Documents\APU\Semester 4\VBN Assignment\VB.NET ASSIGNMENT\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.Main.resources
-C:\Users\ChoongFoo\Documents\APU\Semester 4\VBN Assignment\VB.NET ASSIGNMENT\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.PInfo.resources
-C:\Users\ChoongFoo\Documents\APU\Semester 4\VBN Assignment\VB.NET ASSIGNMENT\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.Resources.resources
-C:\Users\ChoongFoo\Documents\APU\Semester 4\VBN Assignment\VB.NET ASSIGNMENT\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.vbproj.GenerateResource.Cache
-<<<<<<< HEAD
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\bin\Debug\VB.NET ASSIGNMENT.exe.config
-C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.exe
-C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.xml
-C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.pdb
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\bin\Debug\VB.NET ASSIGNMENT.exe
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\bin\Debug\VB.NET ASSIGNMENT.pdb
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\bin\Debug\VB.NET ASSIGNMENT.xml
@@ -25,9 +8,6 @@ C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.PInfo.resources
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.Resources.resources
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.vbproj.GenerateResource.Cache
-=======
-C:\Users\Mr.Lee\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\bin\Debug\VB.NET ASSIGNMENT.exe.config
-C:\Users\Mr.Lee\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.exe
-C:\Users\Mr.Lee\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.xml
-C:\Users\Mr.Lee\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.pdb
->>>>>>> origin/master
+C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.exe
+C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.xml
+C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.pdb
