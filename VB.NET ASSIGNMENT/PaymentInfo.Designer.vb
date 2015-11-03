@@ -56,6 +56,7 @@ Partial Class PInfo
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.currentTime_lbl = New System.Windows.Forms.Label()
         Me.currentDate_lbl = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label4
@@ -412,11 +413,22 @@ Partial Class PInfo
         Me.currentDate_lbl.TabIndex = 45
         Me.currentDate_lbl.Text = "Date"
         '
+        'Label10
+        '
+        Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(209, 379)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(78, 13)
+        Me.Label10.TabIndex = 47
+        Me.Label10.Text = "*Inclusive GST"
+        '
         'PInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(296, 497)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.currentTime_lbl)
         Me.Controls.Add(Me.currentDate_lbl)
         Me.Controls.Add(Me.cancel_btn)
@@ -490,4 +502,5 @@ Partial Class PInfo
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents currentTime_lbl As System.Windows.Forms.Label
     Friend WithEvents currentDate_lbl As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
 End Class
