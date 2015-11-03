@@ -27,8 +27,6 @@ Partial Class Login
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.password_txt = New System.Windows.Forms.TextBox()
-        Me.LoginBtn = New System.Windows.Forms.Button()
-        Me.ExitBtn = New System.Windows.Forms.Button()
         Me.username_cbbox = New System.Windows.Forms.ComboBox()
         Me.login_btn = New System.Windows.Forms.Button()
         Me.quit_btn = New System.Windows.Forms.Button()
@@ -80,26 +78,6 @@ Partial Class Login
         Me.password_txt.Size = New System.Drawing.Size(192, 21)
         Me.password_txt.TabIndex = 1
         '
-        'LoginBtn
-        '
-        Me.LoginBtn.Location = New System.Drawing.Point(221, 411)
-        Me.LoginBtn.Margin = New System.Windows.Forms.Padding(2)
-        Me.LoginBtn.Name = "LoginBtn"
-        Me.LoginBtn.Size = New System.Drawing.Size(103, 44)
-        Me.LoginBtn.TabIndex = 2
-        Me.LoginBtn.Text = "&Login"
-        Me.LoginBtn.UseVisualStyleBackColor = True
-        '
-        'ExitBtn
-        '
-        Me.ExitBtn.Location = New System.Drawing.Point(344, 411)
-        Me.ExitBtn.Margin = New System.Windows.Forms.Padding(2)
-        Me.ExitBtn.Name = "ExitBtn"
-        Me.ExitBtn.Size = New System.Drawing.Size(103, 44)
-        Me.ExitBtn.TabIndex = 2
-        Me.ExitBtn.Text = "E&xit"
-        Me.ExitBtn.UseVisualStyleBackColor = True
-        '
         'username_cbbox
         '
         Me.username_cbbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -139,7 +117,7 @@ Partial Class Login
         'currentDate_lbl
         '
         Me.currentDate_lbl.AutoSize = True
-        Me.currentDate_lbl.Location = New System.Drawing.Point(562, 19)
+        Me.currentDate_lbl.Location = New System.Drawing.Point(549, 19)
         Me.currentDate_lbl.Name = "currentDate_lbl"
         Me.currentDate_lbl.Size = New System.Drawing.Size(30, 13)
         Me.currentDate_lbl.TabIndex = 27
@@ -153,19 +131,18 @@ Partial Class Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(681, 385)
+        Me.ClientSize = New System.Drawing.Size(711, 376)
         Me.Controls.Add(Me.currentTime_lbl)
         Me.Controls.Add(Me.currentDate_lbl)
         Me.Controls.Add(Me.quit_btn)
         Me.Controls.Add(Me.login_btn)
         Me.Controls.Add(Me.username_cbbox)
-        Me.Controls.Add(Me.ExitBtn)
-        Me.Controls.Add(Me.LoginBtn)
         Me.Controls.Add(Me.password_txt)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MaximizeBox = False
         Me.Name = "Login"
         Me.Text = "Golf Club Membership Management System"
         Me.ResumeLayout(False)
@@ -176,8 +153,6 @@ Partial Class Login
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents password_txt As System.Windows.Forms.TextBox
-    Friend WithEvents LoginBtn As System.Windows.Forms.Button
-    Friend WithEvents ExitBtn As System.Windows.Forms.Button
     Friend WithEvents username_cbbox As System.Windows.Forms.ComboBox
     Friend WithEvents login_btn As System.Windows.Forms.Button
     Friend WithEvents quit_btn As System.Windows.Forms.Button

@@ -1,23 +1,22 @@
 ﻿Imports System.Data.OleDb
 Public Class Main
-    Dim ConString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\Membership.accdb"
+    Dim ConString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " & Application.StartupPath & "\Membership.accdb"
     Dim con As New OleDbConnection(ConString)
     Dim da As New OleDbDataAdapter
     Dim ds, ds1 As New DataSet
     Dim cmd As New OleDb.OleDbCommand
     Dim Sql As String
     Dim totalRec, CurRec As Integer
-
-    Private Const CP_NOCLOSE_BUTTON As Integer = &H200
-    Protected Overloads Overrides ReadOnly Property CreateParams() As CreateParams
-        Get
-            Dim myCp As CreateParams = MyBase.CreateParams
-            myCp.ClassStyle = myCp.ClassStyle Or CP_NOCLOSE_BUTTON
-            Return myCp
-        End Get
-    End Property
+    Dim ButtonCheck As Boolean
+ 
+    Private Sub Main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        If ButtonCheck = False Then
+            Login.Close()
+        End If
+    End Sub
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MaximizeBox = False
+        'Fill the record database where Members table and ascending order by MemberID 
+        ButtonCheck = False
         con.Open()
         Sql = "Select * from Members order by MemberID"
         da = New OleDbDataAdapter(Sql, con)
@@ -27,7 +26,7 @@ Public Class Main
         Call Filldata()
     End Sub
 
-    Public Sub Filldata()
+    Public Sub Filldata() 'Fill in the record from the database
         memberID_txt.Text = ds.Tables("MembersData").Rows(CurRec).Item(0)
         firstName_txt.Text = ds.Tables("MembersData").Rows(CurRec).Item(1)
         lastName_txt.Text = ds.Tables("MembersData").Rows(CurRec).Item(2)
@@ -40,11 +39,13 @@ Public Class Main
     End Sub
 
     Private Sub first_btn_Click(sender As Object, e As EventArgs) Handles first_btn.Click
+        'First record
         CurRec = 0
         Call Filldata()
     End Sub
 
     Private Sub previous_btn_Click(sender As Object, e As EventArgs) Handles previous_btn.Click
+        'Previous record
         If CurRec <= 0 Then
             MsgBox("You have reach the first field.", MsgBoxStyle.Critical)
         Else
@@ -54,6 +55,7 @@ Public Class Main
     End Sub
 
     Private Sub next_btn_Click(sender As Object, e As EventArgs) Handles next_btn.Click
+        'Next record
         If CurRec >= totalRec - 1 Then
             MsgBox("You have reach the Last field.", MsgBoxStyle.Critical)
         Else
@@ -63,6 +65,7 @@ Public Class Main
     End Sub
 
     Private Sub last_btn_Click(sender As Object, e As EventArgs) Handles last_btn.Click
+        'Last record
         If CurRec >= totalRec - 1 Then
             MsgBox("At Last Record", MsgBoxStyle.Critical)
         Else
@@ -72,10 +75,12 @@ Public Class Main
     End Sub
 
     Private Sub remove_btn_Click(sender As Object, e As EventArgs) Handles remove_btn.Click
-        If Role.Text <> "Administrator" Then
+        'Remove member
+        If Role.Text <> "Administrator" Then 'If the user is not administrator, disable this operation
             MsgBox("This operation is only allow for Administrator", MsgBoxStyle.Critical)
             Exit Sub
         End If
+        'Sql query for deleting record
         Sql = "Delete * from Members where "
         Sql = Sql & "MemberID= '" & memberID_txt.Text & "'"
         cmd = New OleDbCommand(Sql, con)
@@ -90,25 +95,27 @@ Public Class Main
         End If
 
     End Sub
-
     Private Sub paymentInfo_btn_Click(sender As Object, e As EventArgs) Handles paymentInfo_btn.Click
-        Form1.memberID_txt.Text = memberID_txt.Text
-        Form1.Show()
-
+        'Open payment info
+        PInfo.memberID_txt.Text = memberID_txt.Text
+        PInfo.membershipIDTypes_cbbox.Text = membershipIDTypes_cbbox.Text
+        PInfo.Show()
+        Me.Enabled = False
     End Sub
 
     Private Sub add_btn_Click(sender As Object, e As EventArgs) Handles add_btn.Click
-
+        'Add new member
         inChargeBy_lbl.Text = Role.Text
 
         memberID_txt.Clear()
         firstName_txt.Clear()
         lastName_txt.Clear()
-        membershipIDTypes_cbbox.ResetText()
+        membershipIDTypes_cbbox.SelectedIndex = -1
         contactNum_txt.Clear()
         emailAdd_txt.Clear()
-        status_cbbox.ResetText()
+        status_cbbox.SelectedIndex = -1
 
+        'To count the memberID that is not existing and add it automatically
         Dim newMemberID As Integer = 1000
         Dim i As Integer
         For i = 0 To totalRec - 1
@@ -140,11 +147,11 @@ Public Class Main
         last_btn.Enabled = False
         search_txt.Enabled = False
         paymentInfo_btn.Enabled = False
-
     End Sub
-
     Private Sub save_btn_Click(sender As Object, e As EventArgs) Handles save_btn.Click
-        If save_btn.Text = "&Save" Then
+        'Save new member information detail into database
+        If save_btn.Text = "Save" Then
+            'Sql query for insert record to the database
             Sql = "insert into Members values ('"
             Sql = Sql & memberID_txt.Text & "','"
             Sql = Sql & firstName_txt.Text & "','"
@@ -155,6 +162,7 @@ Public Class Main
             Sql = Sql & status_cbbox.Text & "','"
             Sql = Sql & inChargeBy_lbl.Text & "')"
 
+            'If the user is not fill in all the record, alert the user and ask for re-fill
             If firstName_txt.Text = "" Or lastName_txt.Text = "" Or membershipIDTypes_cbbox.Text = "" Or contactNum_txt.Text = "" Or emailAdd_txt.Text = "" Or status_cbbox.Text = "" Then
                 MsgBox("Please fill in all the column.")
                 Exit Sub
@@ -165,41 +173,35 @@ Public Class Main
             cancel_btn.PerformClick()
 
         Else
+            'Sql query for updating record from database
             Sql = "UPDATE Members SET"
             Sql = Sql & "[FirstName] = '" & firstName_txt.Text & "',"
             Sql = Sql & "[LastName] = '" & lastName_txt.Text & "',"
             Sql = Sql & "[MembershipID] = '" & membershipIDTypes_cbbox.Text & "',"
             Sql = Sql & "[ContactNumber] = '" & contactNum_txt.Text & "',"
-            Sql = Sql & "[E-mailAddress] = '" & emailAdd_txt.Text & "',"
+            Sql = Sql & "[EmailAddress] = '" & emailAdd_txt.Text & "',"
             Sql = Sql & "[Status] = '" & status_cbbox.Text & "' Where [MemberID] = " & "'" & memberID_txt.Text & "'"
 
+            'If the user is not fill in all the record, alert the user and ask for re-fill
             If firstName_txt.Text = "" Or lastName_txt.Text = "" Or membershipIDTypes_cbbox.Text = "" Or contactNum_txt.Text = "" Or emailAdd_txt.Text = "" Or status_cbbox.Text = "" Then
                 MsgBox("Please fill in all the column.")
             Else
                 Dim y As String
-                y = MsgBox("Confirmation", MsgBoxStyle.YesNo)
+                y = MsgBox("Update Confirmation", MsgBoxStyle.YesNo)
                 If y = vbYes Then
                     cmd = New OleDbCommand(Sql, con)
                     cmd.ExecuteNonQuery()
                     cancel_btn.PerformClick()
-
-
+                    save_btn.Text = "Save"
                 Else
                     MsgBox("Updata is cancelled.")
-
                 End If
             End If
         End If
-
     End Sub
-
-    Private Sub status_cbbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles status_cbbox.SelectedIndexChanged
-
-    End Sub
-
     Private Sub edit_btn_Click(sender As Object, e As EventArgs) Handles edit_btn.Click
-
-        If Role.Text <> "Administrator" Then
+        'Edit member information detail
+        If Role.Text <> "Administrator" Then 'If the user is not administrator, disable this operation
             MsgBox("This operation is only allow for Administrator", MsgBoxStyle.Critical)
             Exit Sub
         End If
@@ -225,24 +227,14 @@ Public Class Main
         last_btn.Enabled = False
         search_txt.Enabled = False
         paymentInfo_btn.Enabled = False
-
-
     End Sub
-
-    Private Sub membershipIDTypes_cbbox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles membershipIDTypes_cbbox.SelectedIndexChanged
-
-    End Sub
-
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles timer_DateAndTime.Tick
+        'Show the current date and time
         currentDate_lbl.Text = Date.Now.ToString("dd-MM-yyyy")
         currentTime_lbl.Text = TimeOfDay
     End Sub
-
-    Private Sub record_lbl_Click(sender As Object, e As EventArgs) Handles record_lbl.Click
-
-    End Sub
-
     Private Sub cancel_btn_Click(sender As Object, e As EventArgs) Handles cancel_btn.Click
+        'To cancel the add and edit operation 
         ds.Clear()
         Sql = "Select * from Members order by MemberID"
         da = New OleDbDataAdapter(Sql, con)
@@ -274,71 +266,65 @@ Public Class Main
     End Sub
 
     Private Sub search_btn_Click(sender As Object, e As EventArgs) Handles search_btn.Click
+        'To search the record order by MemberID
         Dim i As Integer
-
-        Sql = "Select * from Members"
-        da = New OleDbDataAdapter(Sql, con)
-        da.Fill(ds1, "SearchMember")
-        For i = 0 To totalRec - 1
-            If search_txt.Text = ds1.Tables("SearchMember").Rows(i).Item(0).ToString Then
-                memberID_txt.Text = search_txt.Text
-                Exit For
-            End If
-        Next
-
-        If search_txt.Text <> memberID_txt.Text Then
-            MsgBox("Unable to find data")
-        Else
-            ds1.Clear()
-
-            Sql = "select * from Members where MemberID = '" & memberID_txt.Text & "'"
+        If search_btn.Text = "Search" Then
+            Sql = "Select * from Members"
             da = New OleDbDataAdapter(Sql, con)
             da.Fill(ds1, "SearchMember")
+            'To verify the user key in value with the existing MemberID to find out the record
+            For i = 0 To totalRec - 1
+                If search_txt.Text = ds1.Tables("SearchMember").Rows(i).Item(0).ToString Then
+                    memberID_txt.Text = search_txt.Text
+                    Exit For
+                End If
+            Next
 
-            memberID_txt.Text = ds1.Tables("SearchMember").Rows(0).Item(0)
-            firstName_txt.Text = ds1.Tables("SearchMember").Rows(0).Item(1)
-            lastName_txt.Text = ds1.Tables("SearchMember").Rows(0).Item(2)
-            membershipIDTypes_cbbox.Text = ds1.Tables("SearchMember").Rows(0).Item(3)
-            contactNum_txt.Text = ds1.Tables("SearchMember").Rows(0).Item(4)
-            emailAdd_txt.Text = ds1.Tables("SearchMember").Rows(0).Item(5)
-            status_cbbox.Text = ds1.Tables("SearchMember").Rows(0).Item(6)
-            inChargeBy_lbl.Text = ds1.Tables("SearchMember").Rows(0).Item(7)
-            record_lbl.Text = "1" & " / " & "1"
+            If search_txt.Text <> memberID_txt.Text Then
+                MsgBox("Unable to find data")
+            Else
+                ds1.Clear()
 
+                Sql = "select * from Members where MemberID = '" & memberID_txt.Text & "'"
+                da = New OleDbDataAdapter(Sql, con)
+                da.Fill(ds1, "SearchMember")
+
+                memberID_txt.Text = ds1.Tables("SearchMember").Rows(0).Item(0)
+                firstName_txt.Text = ds1.Tables("SearchMember").Rows(0).Item(1)
+                lastName_txt.Text = ds1.Tables("SearchMember").Rows(0).Item(2)
+                membershipIDTypes_cbbox.Text = ds1.Tables("SearchMember").Rows(0).Item(3)
+                contactNum_txt.Text = ds1.Tables("SearchMember").Rows(0).Item(4)
+                emailAdd_txt.Text = ds1.Tables("SearchMember").Rows(0).Item(5)
+                status_cbbox.Text = ds1.Tables("SearchMember").Rows(0).Item(6)
+                inChargeBy_lbl.Text = ds1.Tables("SearchMember").Rows(0).Item(7)
+                record_lbl.Text = "1" & " / " & "1"
+
+                search_btn.Text = "Back"
+            End If
+        Else
+            ds.Clear()
+            Sql = "Select * from Members order by MemberID"
+            da = New OleDbDataAdapter(Sql, con)
+            da.Fill(ds, "MembersData")
+            totalRec = ds.Tables("MembersData").Rows.Count
+            CurRec = 0
+            search_btn.Text = "Search"
+            Call Filldata()
         End If
-
     End Sub
-
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles timer_SaveOrUpdate.Tick
-
-    End Sub
-
-    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles ECM_lbl.Click
-
-    End Sub
-
-    Private Sub inChargeBy_txt_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Role.Click
-
-    End Sub
-
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-
-    End Sub
-
     Private Sub logOut_btn_Click(sender As Object, e As EventArgs) Handles logOut_btn.Click
+        'Staff logout
         Dim y As String
-        y = MsgBox("Log-out confirmation.", MsgBoxStyle.YesNo)
+        y = MsgBox("Logout confirmation.", MsgBoxStyle.YesNo)
         If y = vbYes Then
+            ButtonCheck = True
             Application.Restart()
         End If
 
     End Sub
-
-    Private Sub inChargeBy_lbl_Click(sender As Object, e As EventArgs) Handles inChargeBy_lbl.Click
-
+    Private Sub report_btn_Click(sender As Object, e As EventArgs) Handles report_btn.Click
+        'To show the member and payment report
+        MemberReport.Show()
+        PaymentReport.Show()
     End Sub
 End Class

@@ -2,7 +2,6 @@ C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\bin\Debug\
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\bin\Debug\VB.NET ASSIGNMENT.exe
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\bin\Debug\VB.NET ASSIGNMENT.pdb
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\bin\Debug\VB.NET ASSIGNMENT.xml
-C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.Form1.resources
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.Login.resources
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.Main.resources
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.PInfo.resources
@@ -11,3 +10,9 @@ C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.exe
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.xml
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.pdb
+C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.vbprojResolveAssemblyReference.cache
+C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.MemberReport.resources
+C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.PaymentReport.resources
+C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\RdlCompile.cache
+C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\RdlCompile.compiled
+C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\bin\Debug\Membership.accdb
