@@ -23,6 +23,7 @@ Partial Class Main
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -76,7 +77,7 @@ Partial Class Main
         Me.Label1.Location = New System.Drawing.Point(54, 133)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(75, 24)
+        Me.Label1.Size = New System.Drawing.Size(138, 42)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Member ID:"
         '
@@ -88,7 +89,7 @@ Partial Class Main
         Me.Label2.Location = New System.Drawing.Point(56, 176)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(76, 24)
+        Me.Label2.Size = New System.Drawing.Size(137, 42)
         Me.Label2.TabIndex = 13
         Me.Label2.Text = "First Name:"
         '
@@ -100,7 +101,7 @@ Partial Class Main
         Me.Label3.Location = New System.Drawing.Point(56, 221)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(73, 24)
+        Me.Label3.Size = New System.Drawing.Size(134, 42)
         Me.Label3.TabIndex = 13
         Me.Label3.Text = "Last Name:"
         '
@@ -112,7 +113,7 @@ Partial Class Main
         Me.Label4.Location = New System.Drawing.Point(54, 268)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(99, 24)
+        Me.Label4.Size = New System.Drawing.Size(183, 42)
         Me.Label4.TabIndex = 13
         Me.Label4.Text = "Membership ID:"
         '
@@ -124,7 +125,7 @@ Partial Class Main
         Me.Label5.Location = New System.Drawing.Point(454, 133)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(107, 24)
+        Me.Label5.Size = New System.Drawing.Size(195, 42)
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "Contact Number:"
         '
@@ -136,7 +137,7 @@ Partial Class Main
         Me.Label6.Location = New System.Drawing.Point(454, 176)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(102, 24)
+        Me.Label6.Size = New System.Drawing.Size(186, 42)
         Me.Label6.TabIndex = 13
         Me.Label6.Text = "E-mail Address:"
         '
@@ -148,7 +149,7 @@ Partial Class Main
         Me.Label7.Location = New System.Drawing.Point(454, 221)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(50, 24)
+        Me.Label7.Size = New System.Drawing.Size(91, 42)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Status:"
         '
@@ -160,7 +161,7 @@ Partial Class Main
         Me.memberID_txt.Location = New System.Drawing.Point(206, 137)
         Me.memberID_txt.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.memberID_txt.Name = "memberID_txt"
-        Me.memberID_txt.Size = New System.Drawing.Size(232, 20)
+        Me.memberID_txt.Size = New System.Drawing.Size(232, 30)
         Me.memberID_txt.TabIndex = 11
         '
         'firstName_txt
@@ -171,7 +172,7 @@ Partial Class Main
         Me.firstName_txt.Location = New System.Drawing.Point(169, 180)
         Me.firstName_txt.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.firstName_txt.Name = "firstName_txt"
-        Me.firstName_txt.Size = New System.Drawing.Size(270, 20)
+        Me.firstName_txt.Size = New System.Drawing.Size(270, 30)
         Me.firstName_txt.TabIndex = 11
         '
         'lastName_txt
@@ -182,7 +183,7 @@ Partial Class Main
         Me.lastName_txt.Location = New System.Drawing.Point(170, 225)
         Me.lastName_txt.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.lastName_txt.Name = "lastName_txt"
-        Me.lastName_txt.Size = New System.Drawing.Size(269, 20)
+        Me.lastName_txt.Size = New System.Drawing.Size(269, 30)
         Me.lastName_txt.TabIndex = 11
         '
         'contactNum_txt
@@ -193,7 +194,7 @@ Partial Class Main
         Me.contactNum_txt.Location = New System.Drawing.Point(633, 137)
         Me.contactNum_txt.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.contactNum_txt.Name = "contactNum_txt"
-        Me.contactNum_txt.Size = New System.Drawing.Size(216, 20)
+        Me.contactNum_txt.Size = New System.Drawing.Size(216, 30)
         Me.contactNum_txt.TabIndex = 11
         '
         'emailAdd_txt
@@ -204,7 +205,7 @@ Partial Class Main
         Me.emailAdd_txt.Location = New System.Drawing.Point(580, 180)
         Me.emailAdd_txt.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.emailAdd_txt.Name = "emailAdd_txt"
-        Me.emailAdd_txt.Size = New System.Drawing.Size(270, 20)
+        Me.emailAdd_txt.Size = New System.Drawing.Size(270, 30)
         Me.emailAdd_txt.TabIndex = 11
         '
         'status_cbbox
@@ -218,7 +219,7 @@ Partial Class Main
         Me.status_cbbox.Location = New System.Drawing.Point(579, 225)
         Me.status_cbbox.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.status_cbbox.Name = "status_cbbox"
-        Me.status_cbbox.Size = New System.Drawing.Size(101, 23)
+        Me.status_cbbox.Size = New System.Drawing.Size(101, 32)
         Me.status_cbbox.TabIndex = 14
         '
         'save_btn
@@ -257,7 +258,7 @@ Partial Class Main
         Me.membershipIDTypes_cbbox.Location = New System.Drawing.Point(168, 272)
         Me.membershipIDTypes_cbbox.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.membershipIDTypes_cbbox.Name = "membershipIDTypes_cbbox"
-        Me.membershipIDTypes_cbbox.Size = New System.Drawing.Size(101, 23)
+        Me.membershipIDTypes_cbbox.Size = New System.Drawing.Size(101, 32)
         Me.membershipIDTypes_cbbox.TabIndex = 14
         '
         'last_btn
@@ -363,7 +364,7 @@ Partial Class Main
         Me.search_txt.Location = New System.Drawing.Point(487, 58)
         Me.search_txt.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.search_txt.Name = "search_txt"
-        Me.search_txt.Size = New System.Drawing.Size(270, 20)
+        Me.search_txt.Size = New System.Drawing.Size(270, 30)
         Me.search_txt.TabIndex = 23
         '
         'timer_DateAndTime
@@ -376,7 +377,7 @@ Partial Class Main
         Me.record_lbl.AutoSize = True
         Me.record_lbl.Location = New System.Drawing.Point(435, 314)
         Me.record_lbl.Name = "record_lbl"
-        Me.record_lbl.Size = New System.Drawing.Size(59, 15)
+        Me.record_lbl.Size = New System.Drawing.Size(112, 25)
         Me.record_lbl.TabIndex = 27
         Me.record_lbl.Text = "Record label"
         '
@@ -398,7 +399,7 @@ Partial Class Main
         Me.ECM_lbl.Font = New System.Drawing.Font("Agency FB", 13.84615!)
         Me.ECM_lbl.Location = New System.Drawing.Point(166, 133)
         Me.ECM_lbl.Name = "ECM_lbl"
-        Me.ECM_lbl.Size = New System.Drawing.Size(35, 24)
+        Me.ECM_lbl.Size = New System.Drawing.Size(63, 42)
         Me.ECM_lbl.TabIndex = 30
         Me.ECM_lbl.Text = "GCM"
         '
@@ -410,7 +411,7 @@ Partial Class Main
         Me.Label8.Location = New System.Drawing.Point(454, 268)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(84, 24)
+        Me.Label8.Size = New System.Drawing.Size(156, 42)
         Me.Label8.TabIndex = 31
         Me.Label8.Text = "In charge by:"
         '
@@ -422,7 +423,7 @@ Partial Class Main
         Me.role_lbl.Location = New System.Drawing.Point(50, 47)
         Me.role_lbl.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.role_lbl.Name = "role_lbl"
-        Me.role_lbl.Size = New System.Drawing.Size(38, 24)
+        Me.role_lbl.Size = New System.Drawing.Size(70, 42)
         Me.role_lbl.TabIndex = 33
         Me.role_lbl.Text = "Role:"
         '
@@ -434,7 +435,7 @@ Partial Class Main
         Me.Role.Location = New System.Drawing.Point(93, 47)
         Me.Role.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Role.Name = "Role"
-        Me.Role.Size = New System.Drawing.Size(33, 24)
+        Me.Role.Size = New System.Drawing.Size(61, 42)
         Me.Role.TabIndex = 34
         Me.Role.Text = "role"
         '
@@ -446,7 +447,7 @@ Partial Class Main
         Me.inChargeBy_lbl.Location = New System.Drawing.Point(575, 268)
         Me.inChargeBy_lbl.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.inChargeBy_lbl.Name = "inChargeBy_lbl"
-        Me.inChargeBy_lbl.Size = New System.Drawing.Size(33, 24)
+        Me.inChargeBy_lbl.Size = New System.Drawing.Size(61, 42)
         Me.inChargeBy_lbl.TabIndex = 35
         Me.inChargeBy_lbl.Text = "role"
         '
@@ -458,7 +459,7 @@ Partial Class Main
         Me.TextBox1.Location = New System.Drawing.Point(580, 137)
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(28, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(28, 30)
         Me.TextBox1.TabIndex = 36
         Me.TextBox1.Text = "+60"
         '
@@ -468,7 +469,7 @@ Partial Class Main
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(616, 138)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(10, 15)
+        Me.Label9.Size = New System.Drawing.Size(18, 25)
         Me.Label9.TabIndex = 37
         Me.Label9.Text = "-"
         '
@@ -490,7 +491,7 @@ Partial Class Main
         Me.ID_lbl.Location = New System.Drawing.Point(50, 17)
         Me.ID_lbl.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.ID_lbl.Name = "ID_lbl"
-        Me.ID_lbl.Size = New System.Drawing.Size(24, 24)
+        Me.ID_lbl.Size = New System.Drawing.Size(44, 42)
         Me.ID_lbl.TabIndex = 39
         Me.ID_lbl.Text = "ID:"
         '
@@ -502,7 +503,7 @@ Partial Class Main
         Me.nameID.Location = New System.Drawing.Point(93, 17)
         Me.nameID.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.nameID.Name = "nameID"
-        Me.nameID.Size = New System.Drawing.Size(42, 24)
+        Me.nameID.Size = New System.Drawing.Size(77, 42)
         Me.nameID.TabIndex = 40
         Me.nameID.Text = "name"
         '
@@ -512,7 +513,7 @@ Partial Class Main
         Me.currentTime_lbl.AutoSize = True
         Me.currentTime_lbl.Location = New System.Drawing.Point(842, 17)
         Me.currentTime_lbl.Name = "currentTime_lbl"
-        Me.currentTime_lbl.Size = New System.Drawing.Size(28, 15)
+        Me.currentTime_lbl.Size = New System.Drawing.Size(51, 25)
         Me.currentTime_lbl.TabIndex = 42
         Me.currentTime_lbl.Text = "Time"
         '
@@ -522,7 +523,7 @@ Partial Class Main
         Me.currentDate_lbl.AutoSize = True
         Me.currentDate_lbl.Location = New System.Drawing.Point(785, 17)
         Me.currentDate_lbl.Name = "currentDate_lbl"
-        Me.currentDate_lbl.Size = New System.Drawing.Size(25, 15)
+        Me.currentDate_lbl.Size = New System.Drawing.Size(49, 25)
         Me.currentDate_lbl.TabIndex = 41
         Me.currentDate_lbl.Text = "Date"
         '
@@ -546,13 +547,13 @@ Partial Class Main
         Me.Label10.Location = New System.Drawing.Point(483, 23)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(134, 24)
+        Me.Label10.Size = New System.Drawing.Size(247, 42)
         Me.Label10.TabIndex = 44
         Me.Label10.Text = "Search for MemberID"
         '
         'Main
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(5.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 24.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(913, 479)
         Me.Controls.Add(Me.Label10)
@@ -597,6 +598,7 @@ Partial Class Main
         Me.Controls.Add(Me.memberID_txt)
         Me.Controls.Add(Me.paymentInfo_btn)
         Me.Font = New System.Drawing.Font("Arial Narrow", 7.912088!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.Name = "Main"
         Me.Text = "Golf Club Membership Management System"

@@ -16,3 +16,21 @@ C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\RdlCompile.cache
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\RdlCompile.compiled
 C:\Users\ChoongFoo\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\bin\Debug\Membership.accdb
+C:\Users\Jason Khor\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\bin\Debug\Membership.accdb
+C:\Users\Jason Khor\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\bin\Debug\VB.NET ASSIGNMENT.exe.config
+C:\Users\Jason Khor\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\bin\Debug\VB.NET ASSIGNMENT.exe
+C:\Users\Jason Khor\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.vbprojResolveAssemblyReference.cache
+C:\Users\Jason Khor\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.Login.resources
+C:\Users\Jason Khor\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.Main.resources
+C:\Users\Jason Khor\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.PInfo.resources
+C:\Users\Jason Khor\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.Resources.resources
+C:\Users\Jason Khor\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.MemberReport.resources
+C:\Users\Jason Khor\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET_ASSIGNMENT.PaymentReport.resources
+C:\Users\Jason Khor\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.vbproj.GenerateResource.Cache
+C:\Users\Jason Khor\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\RdlCompile.cache
+C:\Users\Jason Khor\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\RdlCompile.compiled
+C:\Users\Jason Khor\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.exe
+C:\Users\Jason Khor\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.xml
+C:\Users\Jason Khor\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\obj\Debug\VB.NET ASSIGNMENT.pdb
+C:\Users\Jason Khor\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\bin\Debug\VB.NET ASSIGNMENT.pdb
+C:\Users\Jason Khor\Documents\GitHub\VB.N-Aissgnment\VB.NET ASSIGNMENT\bin\Debug\VB.NET ASSIGNMENT.xml
