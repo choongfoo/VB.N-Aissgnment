@@ -237,23 +237,23 @@ Public Class PInfo
         'Membership fee type
         If membershipIDTypes_cbbox.Text = "DLX" Then
             If description_cbbox.Text = "Registration" Then
-                amountDue_txt.Text = 500
+                amountDue_txt.Text = 500 * 106 / 100
             ElseIf description_cbbox.Text = "MonthlyFee" Then
-                amountDue_txt.Text = 120
+                amountDue_txt.Text = 120 * 106 / 100
             End If
 
         ElseIf membershipIDTypes_cbbox.Text = "NDLX" Then
             If description_cbbox.Text = "Registration" Then
-                amountDue_txt.Text = 300
+                amountDue_txt.Text = 300 * 106 / 100
             ElseIf description_cbbox.Text = "MonthlyFee" Then
-                amountDue_txt.Text = 100
+                amountDue_txt.Text = 100 * 106 / 100
             End If
 
         ElseIf membershipIDTypes_cbbox.Text = "WD" Then
             If description_cbbox.Text = "Registration" Then
-                amountDue_txt.Text = 180
+                amountDue_txt.Text = 180 * 106 / 100
             ElseIf description_cbbox.Text = "MonthlyFee" Then
-                amountDue_txt.Text = 75
+                amountDue_txt.Text = 75 * 106 / 100
             End If
         End If
         amountPaid_txt.Text = amountDue_txt.Text
